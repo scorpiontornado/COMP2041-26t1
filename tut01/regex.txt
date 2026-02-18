@@ -1,0 +1,9 @@
+6.a. ^#
+
+Preprocessing directives are lines in your program that start with ‘#’.
+Whitespace is allowed before and after the ‘#’.
+The ‘#’ is followed by an identifier _ or letter
+
+^\s*#\s*[a-zA-Z_]
+
+6.b. ^[^#]|^$
