@@ -6,7 +6,7 @@
 # To install requests:
 # > python3 -m venv .venv
 # > source .venv/bin/activate
-# > pip3 install requests
+# > pip3 install requests bs4
 #
 # You'll need to re-run `source .venv/bin/activate` in each new terminal
 

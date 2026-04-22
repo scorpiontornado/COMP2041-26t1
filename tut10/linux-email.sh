@@ -6,4 +6,15 @@
 # to Andrew (andrewt@unsw.edu.au), each as an attachment to a separate email.
 # The source files may be anywhere in a directory tree than goes 10+ levels deep.
 
-# TODO
+# directory=/usr/src/linux
+directory=/Users/nicholas/Developer/
+
+# Assumes pathnames don't contain whitespace
+
+# for c_file in $(find "$directory" -type f -name "*.c")
+# do
+#     echo mutt -s "C for you"  -a "$c_file" -- andrewt@unsw.edu.au
+# done
+
+find "$directory" -type f -name "*.c" \
+    -exec echo mutt -s "C for you"  -a "{}" -- andrewt@unsw.edu.au \;

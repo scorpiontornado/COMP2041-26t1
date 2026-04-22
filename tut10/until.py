@@ -17,11 +17,28 @@ def main():
     parser.add_argument("stop")
     args = parser.parse_args()
 
-    # TODO: handle int and regex (strip "/" & compile)
+    # if args.stop.isnumeric():
+    #     print("number")
+    # else:
+    #     print("regex")
+
+    try:
+        stop = int(args.stop)
+    except:
+        stop = compile(args.stop[1:-1])
 
     for i, line in enumerate(sys.stdin, start=1):
-        # TODO: print lines until a given number or matches regex
-        pass
+        # if line[-1] == '\n':
+        #     line = line[:-1]
+        line = line.rstrip("\n")
+        print(line)
+
+        if isinstance(stop, int):
+            if i == stop:
+                break
+        else:  # stop is a compiled regex object
+            if stop.search(line):
+                break
 
 
 if __name__ == "__main__":

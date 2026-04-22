@@ -6,15 +6,21 @@
 # input into their upper-case equivalents and, at the same time, maps all
 # upper-case vowels (A, E, I, O, U) into their lower-case equivalents.
 
+# Shell equivalent:
+# tr "AEIOUaeiou" "aeiouAEIOU"
 
 import sys
 
 VOWELS = "aeiou"
 
+# "AEIOUaeiou"
+# "aeiouAEIOU"
+
 
 def main():
-    # TODO
-    pass
+    tt = str.maketrans(VOWELS.upper() + VOWELS.lower(), VOWELS.lower() + VOWELS.upper())
+    for line in sys.stdin:
+        print(line.translate(tt), end="")
 
 
 if __name__ == "__main__":
